@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규식</title>
+    <script>
+        /*
+            정규식
+            문자열에서 특정한 패턴을 찾거나, 검사하거나, 치환하기 위해 사용하는 표현식
+
+            /패턴/옵션
+            또는
+            new RegExp('패턴', '옵션')
+
+            패턴
+            a : 문자 a. abc(문자열 abc)
+            . : 아무 문자 1개
+            [abc] : a또는 b또는 c를 찾음
+            [a-z] : a부터 z, [가-힣] 한글, [0-9] 숫자, [^0-9] 숫자빼고 문자들만
+            * : 0번 이상 (문자가 없어도 됨)
+            + : 1번 이상 (한 글자 이상은 무조건)
+            ? : 0 또는 1 
+            {n} : 정확히 {n}번
+            {n,} : {n}번 이상
+            {n,m} : n~m번
+            ^ : 문자열 시작
+            $ : 문자열 끝
+            \d : 숫자만 들어가야 함
+            \D : 숫자가 아닌 것만 들어가야 함
+            \w : 문자 또는 숫자 또는 _ 만 들어가야 함
+            \W : 문자 또는 숫자 또는 _ 외 문자만 들어가야 함
+            \s : 공백
+            \S : 공백 아닌 문자
+            g : 전체 검색
+            i : 대소문자 무시
+            m : 여러 줄 처리
+
+            test() : 패턴 존재 여부
+                const reg = /^[0-9](숫자로 시작)+$/
+                reg.test('a123') // false (숫자로 시작 안했음)
+                reg.test('1234') // true 숫자로 시작하고 한 글자 이상 사용하고 끝나야 함
+            match() : 일치 결과 반환
+                'abc123'.match(/\d+/) /// ['123'] / 숫자만인데 여러 글자 가능
+            replace() : 치환
+                '010-1234-5678'.replace(/-/g, '') //01012345678 // -을 전체 검색하고 제거
+            search() : 위치 반환
+                'hello'.search(/e/) // 1
+        */
+    </script>
+</head>
+<body>
+    <button id="checkBtn">검사하기</button>
+    <script>
+        document.getElementById("checkBtn").addEventListener("click", function() {
+            const email = "apple@apple.com"
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^/s@]+$/
+            consile.log('이메일검사: ', emailRegex.test(email))
+
+            
+
+        })
+    </script>
+</body>
+</html>
